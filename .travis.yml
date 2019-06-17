@@ -27,8 +27,7 @@ jobs:
     before_script:
     - unbuffer gulp buildSamples
     - unbuffer gulp lintAll
-    script:
-    unbuffer gulp buildPrepare;
+    script: unbuffer gulp buildPrepare
   - stage: build
     env: APP_ENV=staging
     install: &1

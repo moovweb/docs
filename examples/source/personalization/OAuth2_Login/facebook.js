@@ -47,7 +47,7 @@ async function facebookLogin(request, response) {
       .catch(() => {
         response.status(400).send('Invalid OAuth2 credentials');
       });
-  response.redirect(`https://www.facebook.com/v3.3/dialog/oauth?client_id=${OAUTH_CONFIG.id}&response_type=code&redirect_uri=${config.hosts.platform.base}/documentation/examples/personalization/oauth2_login/callback/facebook&state=${OAUTH_CONFIG.state}&scope=${OAUTH_CONFIG.scopes}&display=popup`);
+  response.redirect(`https://www.facebook.com/v3.3/dialog/oauth?client_id=${OAUTH_CONFIG.id}&response_type=code&redirect_uri=${config.hosts.preview.base}/documentation/examples/personalization/oauth2_login/callback/facebook&state=${OAUTH_CONFIG.state}&scope=${OAUTH_CONFIG.scopes}&display=popup`);
 }
 
 async function facebookCallback(request, response) {
@@ -69,7 +69,7 @@ async function facebookCallback(request, response) {
   }
   axios({
     method: 'get',
-    url: `https://graph.facebook.com/v3.3/oauth/access_token?client_id=${OAUTH_CONFIG.id}&client_secret=${OAUTH_CONFIG.secret}&code=${token}&redirect_uri=${config.hosts.platform.base}/documentation/examples/personalization/oauth2_login/callback/facebook`,
+    url: `https://graph.facebook.com/v3.3/oauth/access_token?client_id=${OAUTH_CONFIG.id}&client_secret=${OAUTH_CONFIG.secret}&code=${token}&redirect_uri=${config.hosts.preview.base}/documentation/examples/personalization/oauth2_login/callback/facebook`,
   }).then((res) => {
     getNameFromToken(response, request, res.data.access_token);
   }).catch(() => {

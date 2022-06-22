@@ -95,7 +95,7 @@
     "file-loader": "3.0.1",
     "globby": "9.2.0",
     "google-closure-compiler": "20190528.0.0",
-    "got": "9.6.0",
+    "got": "11.8.5",
     "gulp": "4.0.2",
     "gulp-amphtml-validator": "1.0.2",
     "gulp-once": "2.0.3",
